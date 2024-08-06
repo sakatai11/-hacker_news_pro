@@ -1,11 +1,9 @@
-
+import Title from "./_components/elements/title/Index";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        home
-      </div>
-    </main>
+      <>
+        <Title text="home" />
+      </>
   );
 }
