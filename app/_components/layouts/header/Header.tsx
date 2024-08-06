@@ -1,5 +1,5 @@
 // import Link from 'next/link';
-// import { pageLinks, topLink } from '@/data/links';
+import { pageLinks } from '@/data/links';
 
 import {
   AppBar,
@@ -34,15 +34,13 @@ const Header = () => {
 
           <Box sx={{ textAlign: 'center' }}>
             <List sx={{display: 'flex', alignItems: 'center'}}>
-              <ListItem>
-                <Link href={'/'}>Home</Link>
-              </ListItem>
-              <ListItem>
-                <Link href={'/signin'}>SignIn</Link>
-              </ListItem>
-              <ListItem>
-                <Link href={'/signup'}>SignUp</Link>
-              </ListItem>
+            {
+              pageLinks.map(({name,href}) => (
+                <ListItem key={name}>
+                  <Link href={href}>{name}</Link>
+                </ListItem>
+              ))
+            }
             </List>
           </Box>
         </Box>

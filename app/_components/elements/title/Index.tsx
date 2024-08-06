@@ -3,7 +3,7 @@ type Props = {
 };
 
 const Title = ({ text }: Props): JSX.Element => (
-    <h1 className="text-center font-normal">{text}</h1>
+    <h1 className="text-center font-bold text-5xl">{text}</h1>
 );
 
 export default Title;
