@@ -15,7 +15,15 @@ import Link from 'next/link';
 const Header = () => {
 
   return (
-    <AppBar color="primary" component="header" position="fixed">
+    <AppBar 
+      color="primary" 
+      component="header" 
+      position="fixed"
+      elevation={3}
+      sx={{ 
+        marginTop: 'auto'
+      }}
+    >
       <Container>
         <Box
           sx={{

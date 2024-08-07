@@ -6,7 +6,11 @@ const Footer = () => {
       color="primary"
       component="footer"
       position="static"
-      sx={{ marginTop: 'auto' }}
+        sx={{ 
+          marginTop: 'auto',
+          position: 'sticky',
+          top: '100vh',
+        }}
     >
       <Container>
         <Box
