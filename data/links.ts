@@ -6,11 +6,15 @@ type PageLink = {
 /** 各ページへのリンク */
 export const pageLinks: PageLink[] = [
   {
-    name: 'News',
-    href: '/news',
+    name: 'Top',
+    href: '/',
   },
   {
-    name: 'Best',
-    href: '/best',
+    name: 'Sports',
+    href: '/sports',
+  },
+  {
+    name: 'Technology',
+    href: '/technology',
   }
 ];

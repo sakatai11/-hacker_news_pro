@@ -1,9 +1,22 @@
-import Title from "./_components/elements/title/Index";
+import Page from "./[newsList]/page";
 
-export default function Home() {
+type Props = {
+  params: {
+    newsList: string;
+  };
+};
+
+export default function Top() {
+  // newsListが/の場合に渡すデフォルトのprops
+  const defaultProps:Props = {
+    params: {
+      newsList: '/',
+    },
+  };
+
   return (
       <>
-        <Title text="Top" />
+        <Page {...defaultProps} />
       </>
   );
 }
