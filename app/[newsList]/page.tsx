@@ -1,4 +1,5 @@
 import Title from "../_components/elements/title/Index";
+import * as NewsList from "@/features/newsList/components/Index";
 import { PAGE_SIZE } from "../_constants/data";
 import { getNews } from "../_libs/api";
 
@@ -11,7 +12,7 @@ export default async function Page({params}: Props) {
   const newsList = params.newsList
 
   const data = await getNews({ params: newsList === '/' ? '' : newsList, pageSize: PAGE_SIZE });
-  console.log('Data:', data);
+  console.log('Data:', data.articles);
 
   function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -20,6 +21,7 @@ export default async function Page({params}: Props) {
   return (
       <>
         <Title text={params.newsList === "/" ? "Top" : capitalizeFirstLetter(params.newsList)} />
+        <NewsList.NewsListWrapper />
       </>
   );
 }

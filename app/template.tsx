@@ -8,7 +8,7 @@ export default function Template({ children }: Children): JSX.Element {
 
   return (
     <Container 
-      maxWidth="xs" 
+      maxWidth="lg"
       sx={{
         paddingY: 20,
     }}>
