@@ -1,6 +1,6 @@
-export const ENDPOINT_URL = 'https://newsapi.org/v2/top-headlines?country=jp' as const;
+export const ENDPOINT_URL = 'https://newsapi.org/v2/everything?language=jp&sortBy=publishedAt' as const;
 
-export const PAGE_SIZE = 9 as number;
+export const PAGE_SIZE = 12 as number;
 
 // export const NEWSLIST_TYPE = ['top', 'new', 'best'] as const;
 

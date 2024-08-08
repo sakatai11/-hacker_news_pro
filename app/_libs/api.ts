@@ -10,7 +10,7 @@ export async function getNews({params, pageSize}:Props) {
   console.log(pageSize);
 
   try {
-    const res = await fetch(`${ENDPOINT_URL}&category=${params}&pageSize=${pageSize}`, {
+    const res = await fetch(`${ENDPOINT_URL}&q=${params}&pageSize=${pageSize}`, {
       headers: {
         'Content-Type': 'application/json',
         'X-Api-Key': process.env.DATA_API_KEY as string,

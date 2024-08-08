@@ -1,10 +1,10 @@
-export type sourceType = {
+export type SourceType = {
   id : string;
   name : string;
 };
 
-export type articleType =  {
-  source: sourceType;
+export type ArticleType =  {
+  source: SourceType;
   author: string;
   title: string;
   description?: string;
@@ -14,8 +14,8 @@ export type articleType =  {
   content: string | null;
 };
 
-export type listType = {
+export type ListType = {
   status: string;
   totalResults: null;
-  article: articleType[];
+  article: ArticleType[];
 };
