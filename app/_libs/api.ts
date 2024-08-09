@@ -10,11 +10,14 @@ export async function getNews({params, pageSize}:Props) {
   console.log(pageSize);
 
   try {
-    const res = await fetch(`${ENDPOINT_URL}&q=${params}&pageSize=${pageSize}`, {
+    const res = await fetch(`${ENDPOINT_URL}&category=${params}&pageSize=${pageSize}`, {
       headers: {
         'Content-Type': 'application/json',
         'X-Api-Key': process.env.DATA_API_KEY as string,
-      }
+      },
+      next: {
+        revalidate: 43200, // 43200秒（12時間）キャッシュを適用
+      },
     });
 
     if (!res.ok) {

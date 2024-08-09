@@ -36,7 +36,7 @@ const Header = () => {
         <CssBaseline />
           <Box>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-              <Link href={'/'}>Header</Link>
+              <Link href={'/'}>Neko News</Link>
             </Typography>
           </Box>
 

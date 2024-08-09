@@ -22,7 +22,7 @@ const NewsListWrapper = ({articleList}:ArticleDataProps) => {
       <Grid container marginTop={0} spacing={5}>
       {
         articleList.map((article) => (
-        <Grid key={article.publishedAt} item xs={4}>
+        <Grid key={article.title} item xs={4}>
         <Link href={article.url} >
           <Box 
             boxShadow={3}
