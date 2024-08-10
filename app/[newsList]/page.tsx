@@ -11,8 +11,8 @@ export default async function Page({params}: Props) {
 
   const newsList = params.newsList
 
-  const data = await getNews({ params: newsList === '/' ? '' : newsList, pageSize: PAGE_SIZE });
-  console.log('Data:', data.articles);
+  const data = await getNews({ params: newsList === '/' ? '' : newsList});
+  // console.log('Data:', data.articles);
 
   function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -21,7 +21,7 @@ export default async function Page({params}: Props) {
   return (
       <>
         <Title text={params.newsList === "/" ? "Top" : capitalizeFirstLetter(params.newsList)} />
-        <NewsList.NewsListWrapper articleList = {data.articles} />
+        <NewsList.NewsListWrapper articleList = {data.articles} pageSize = {PAGE_SIZE} />
       </>
   );
 }

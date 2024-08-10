@@ -2,15 +2,15 @@ import { ENDPOINT_URL } from "../_constants/data";
 
 type Props = {
   params: string;
-  pageSize: number;
+  // pageSize: number;
 }
 
-export async function getNews({params, pageSize}:Props) {
+export async function getNews({params}:Props) {
   console.log(params);
-  console.log(pageSize);
+  // console.log(pageSize);
 
   try {
-    const res = await fetch(`${ENDPOINT_URL}&category=${params}&pageSize=${pageSize}`, {
+    const res = await fetch(`${ENDPOINT_URL}&category=${params}`, {
       headers: {
         'Content-Type': 'application/json',
         'X-Api-Key': process.env.DATA_API_KEY as string,

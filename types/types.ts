@@ -19,3 +19,13 @@ export type ListType = {
   totalResults: null;
   article: ArticleType[];
 };
+
+export type PageLink = {
+  name: string;
+  href: string;
+};
+
+export type SearchLink = {
+  alt: string;
+  href: string;
+};

@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      //カスタム値
+      screens: {
+        sm: { max: '560px' },
+        md: { max: '768px' },
+        tb: { max: '960px' },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
