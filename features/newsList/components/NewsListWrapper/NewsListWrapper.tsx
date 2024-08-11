@@ -44,7 +44,7 @@ const NewsListWrapper = ({articleList, pageSize}:ArticleDataProps)  => {
             height="100%"
           >
             <Image 
-              src={article.urlToImage ? article.urlToImage : dummy}
+              src={article.urlToImage ? article.urlToImage : dummy.src}
               width={320}
               height={160}
               alt="アイキャッチ"
