@@ -6,7 +6,8 @@ import Image from 'next/image';
 import dummy from '/public/dummy.png';
 import Link from 'next/link';
 import { ArticleType } from '@/types/types';
-import Button from '@mui/material/Button';
+import CountButton from '@/features/components/CountButton';
+import { v4 as uuid } from "uuid";
 
 type ArticleDataProps = {
   articleList: ArticleType[];
@@ -32,7 +33,7 @@ const NewsListWrapper = ({articleList, pageSize}:ArticleDataProps)  => {
       >
       {
         displayedArticles.map((article) => (
-        <Grid key={article.title} item xs={4}>
+        <Grid key={uuid()} item xs={4}>
         <Link href={article.url} >
           <Box 
             boxShadow={3}
@@ -67,12 +68,7 @@ const NewsListWrapper = ({articleList, pageSize}:ArticleDataProps)  => {
     </Box>
     {
       count <= articleList.length && 
-    <Box marginTop={10} textAlign={'center'}>
-      <Button sx={{ width: { xs: "100%", sm: "320px" }, paddingX: "10px", paddingY: "15px"}} variant="contained" onClick={() => setCount((prev) => prev + pageSize)}
-      >
-        さらに表示する
-      </Button>
-    </Box>
+      <CountButton  handleClick={() => setCount((prev) => prev + pageSize)}/>
     }
     </>
   );

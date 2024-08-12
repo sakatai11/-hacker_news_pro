@@ -1,3 +1,4 @@
 import SearchWrapper from "./SearchWrapper/SearchWrapper";
+import KeyWord from "./KeyWord/KeyWord";
 
-export { SearchWrapper };
+export { SearchWrapper, KeyWord };
