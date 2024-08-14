@@ -49,7 +49,7 @@ const SearchWrapper = ({ articleList, pageSize }: KeyWordProps) => {
                       width={320}
                       height={160}
                       alt="アイキャッチ"
-                      className="w-screen aspect-[2/1] object-cover rounded-md"
+                      className="aspect-[2/1] w-screen rounded-md object-cover"
                     />
                   </Box>
 
