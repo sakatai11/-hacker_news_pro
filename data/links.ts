@@ -1,4 +1,4 @@
-import { PageLink, SearchLink } from "@/types/types";
+import { PageLink, SearchLink } from '@/types/types';
 
 /** 各ページへのリンク */
 export const pageLinks: PageLink[] = [
@@ -13,12 +13,11 @@ export const pageLinks: PageLink[] = [
   {
     name: 'Technology',
     href: '/technology',
-  }
+  },
 ];
 
 /** 各ページへのリンク */
-export const searchLink: SearchLink = 
-  {
-    alt: '検索',
-    href: '/search',
-  };
+export const searchLink: SearchLink = {
+  alt: '検索',
+  href: '/search',
+};

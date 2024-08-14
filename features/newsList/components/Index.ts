@@ -1,3 +1,3 @@
-import NewsListWrapper from "./NewsListWrapper/NewsListWrapper";
+import NewsListWrapper from './NewsListWrapper/NewsListWrapper';
 
 export { NewsListWrapper };

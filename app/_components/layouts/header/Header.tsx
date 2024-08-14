@@ -1,5 +1,5 @@
 'use client';
-import { pageLinks,searchLink } from '@/data/links';
+import { pageLinks, searchLink } from '@/data/links';
 import { useState } from 'react';
 import DrawerMenu from './DrawerMenu';
 import {
@@ -10,7 +10,7 @@ import {
   List,
   ListItem,
   CssBaseline,
-  styled
+  styled,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -27,18 +27,17 @@ const ResponsiveBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState(false);
 
   return (
-    <AppBar 
-      color="primary" 
-      component="header" 
+    <AppBar
+      color="primary"
+      component="header"
       position="fixed"
       elevation={3}
-      sx={{ 
-        marginTop: 'auto'
+      sx={{
+        marginTop: 'auto',
       }}
     >
       <Container>
@@ -65,9 +64,19 @@ const Header = () => {
                 anchor={'right'}
                 open={drawerOpened}
                 onClose={() => setDrawerOpened(false)}
-                PaperProps={{ style: { width: '70%' , justifyContent: 'center', position: 'fixed'}}}
+                PaperProps={{
+                  style: {
+                    width: '70%',
+                    justifyContent: 'center',
+                    position: 'fixed',
+                  },
+                }}
               >
-                <DrawerMenu links={pageLinks} searchLink={searchLink} handleDrawerClose={() => setDrawerOpened(false)} />
+                <DrawerMenu
+                  links={pageLinks}
+                  searchLink={searchLink}
+                  handleDrawerClose={() => setDrawerOpened(false)}
+                />
               </Drawer>
             </Box>
           </ResponsiveBox>
@@ -80,7 +89,7 @@ const Header = () => {
                     <Link href={href}>{name}</Link>
                   </ListItem>
                 ))}
-                <ListItem >
+                <ListItem>
                   <Link href={searchLink.href}>
                     <SearchIcon />
                   </Link>

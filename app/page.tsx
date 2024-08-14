@@ -1,4 +1,4 @@
-import Page from "./[newsList]/page";
+import Page from './[newsList]/page';
 
 type Props = {
   params: {
@@ -8,15 +8,15 @@ type Props = {
 
 export default function Top() {
   // newsListが/の場合に渡すデフォルトのprops
-  const defaultProps:Props = {
+  const defaultProps: Props = {
     params: {
       newsList: '/',
     },
   };
 
   return (
-      <>
-        <Page {...defaultProps} />
-      </>
+    <>
+      <Page {...defaultProps} />
+    </>
   );
 }

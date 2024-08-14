@@ -5,16 +5,14 @@ type Children = {
 };
 
 export default function Template({ children }: Children): JSX.Element {
-
   return (
-    <Container 
+    <Container
       maxWidth="lg"
       sx={{
         paddingY: 20,
-    }}>
-      <main>
-        {children}
-      </main>
+      }}
+    >
+      <main>{children}</main>
     </Container>
   );
 }

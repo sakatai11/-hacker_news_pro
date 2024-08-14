@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "rm -rf .next/cache/fetch-cache && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix",
+    "prettier": "prettier --write .",
+    "format": "npm run prettier && npm run lint"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -23,9 +25,13 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

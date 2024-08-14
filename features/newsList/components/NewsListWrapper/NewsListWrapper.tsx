@@ -7,15 +7,15 @@ import dummy from '/public/dummy.png';
 import Link from 'next/link';
 import { ArticleType } from '@/types/types';
 import CountButton from '@/features/components/CountButton';
-import { v4 as uuid } from "uuid";
+import { v4 as uuid } from 'uuid';
 
 type ArticleDataProps = {
   articleList: ArticleType[];
   pageSize: number;
-}
+};
 
-const NewsListWrapper = ({articleList, pageSize}:ArticleDataProps)  => {
-  const [ count, setCount ] = useState<number>(pageSize)
+const NewsListWrapper = ({ articleList, pageSize }: ArticleDataProps) => {
+  const [count, setCount] = useState<number>(pageSize);
 
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
@@ -27,51 +27,56 @@ const NewsListWrapper = ({articleList, pageSize}:ArticleDataProps)  => {
 
   return (
     <>
-    <Box sx={{ flexGrow: 1, marginTop: 6}}>
-      <Grid container marginTop={0} spacing={5} 
-        direction={{ xs: 'column', sm: 'row' }}
-      >
-      {
-        displayedArticles.map((article) => (
-        <Grid key={uuid()} item xs={4}>
-        <Link href={article.url} >
-          <Box 
-            boxShadow={3}
-            borderRadius={2}
-            bgcolor={"#FFFFFF"}
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between"
-            height="100%"
-          >
-            <Image 
-              src={article.urlToImage ? article.urlToImage : dummy.src}
-              width={320}
-              height={160}
-              alt="アイキャッチ"
-              className="aspect-[2/1] w-screen rounded-t-[inherit] object-cover"
-              priority={true}
-            />
-            <div className='p-2 flex flex-col justify-between gap-2 flex-grow'>
-              <div className='flex flex-col gap-1'>
-                <span className='inline-block text-neutral-400 text-xs'>{new Date(article.publishedAt).toLocaleDateString('ja-JP', options)}</span>
-                <p className='text-xl font-bold'>{article.title}</p>
-              </div>
-              <p className='break-words'>{article.author}</p>
-            </div>
-          </Box>
-          </Link>
+      <Box sx={{ flexGrow: 1, marginTop: 6 }}>
+        <Grid
+          container
+          marginTop={0}
+          spacing={5}
+          direction={{ xs: 'column', sm: 'row' }}
+        >
+          {displayedArticles.map((article) => (
+            <Grid key={uuid()} item xs={4}>
+              <Link href={article.url}>
+                <Box
+                  boxShadow={3}
+                  borderRadius={2}
+                  bgcolor={'#FFFFFF'}
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  height="100%"
+                >
+                  <Image
+                    src={article.urlToImage ? article.urlToImage : dummy.src}
+                    width={320}
+                    height={160}
+                    alt="アイキャッチ"
+                    className="aspect-[2/1] w-screen rounded-t-[inherit] object-cover"
+                    priority={true}
+                  />
+                  <div className="p-2 flex flex-col justify-between gap-2 flex-grow">
+                    <div className="flex flex-col gap-1">
+                      <span className="inline-block text-neutral-400 text-xs">
+                        {new Date(article.publishedAt).toLocaleDateString(
+                          'ja-JP',
+                          options,
+                        )}
+                      </span>
+                      <p className="text-xl font-bold">{article.title}</p>
+                    </div>
+                    <p className="break-words">{article.author}</p>
+                  </div>
+                </Box>
+              </Link>
+            </Grid>
+          ))}
         </Grid>
-        ))
-      }
-      </Grid>
-    </Box>
-    {
-      count <= articleList.length && 
-      <CountButton  handleClick={() => setCount((prev) => prev + pageSize)}/>
-    }
+      </Box>
+      {count <= articleList.length && (
+        <CountButton handleClick={() => setCount((prev) => prev + pageSize)} />
+      )}
     </>
   );
-}
+};
 
 export default NewsListWrapper;

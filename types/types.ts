@@ -1,16 +1,16 @@
 export type SourceType = {
-  id : string;
-  name : string;
+  id: string;
+  name: string;
 };
 
-export type ArticleType =  {
+export type ArticleType = {
   source: SourceType;
   author: string;
   title: string;
   description?: string;
   url: string;
-  urlToImage? : string;
-  publishedAt : string;
+  urlToImage?: string;
+  publishedAt: string;
   content: string | null;
 };
 
