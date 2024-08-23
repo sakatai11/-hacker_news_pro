@@ -3,6 +3,8 @@ import * as NewsList from '@/features/newsList/components/Index';
 import { PAGE_SIZE } from '../_constants/data';
 import { getNews } from '../_libs/api';
 
+export const runtime = 'edge';
+
 type Props = {
   params: { newsList: string };
 };
