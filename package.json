@@ -1,5 +1,5 @@
 {
-  "name": "hacker_news_pro",
+  "name": "sample_news_pro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,6 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
