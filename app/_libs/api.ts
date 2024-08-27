@@ -15,7 +15,7 @@ export async function getNews({ params }: Props) {
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Api-Key': process.env.NEXT_PUBLIC_DATA_API_KEY as string,
+          'X-Api-Key': process.env.DATA_API_KEY as string,
         },
         next: {
           revalidate: 43200, // 43200秒（12時間）キャッシュを適用
@@ -46,7 +46,7 @@ export async function getSearchNews({ keyWord }: Props) {
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Api-Key': process.env.NEXT_PUBLIC_DATA_API_KEY as string,
+          'X-Api-Key': process.env.DATA_API_KEY as string,
         },
         next: {
           revalidate: 43200, // 43200秒（12時間）キャッシュを適用
