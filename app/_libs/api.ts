@@ -7,6 +7,7 @@ type Props = {
 
 export async function getNews({ params }: Props) {
   // console.log(params);
+  // console.log(pageSize);
 
   try {
     const res = await fetch(
