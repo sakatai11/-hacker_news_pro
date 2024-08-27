@@ -17,7 +17,9 @@ export async function getNews({ params }: Props) {
           'Content-Type': 'application/json',
           'X-Api-Key': process.env.DATA_API_KEY as string,
         },
-        cache: 'no-store',
+        next: {
+          revalidate: 43200, // 43200秒（12時間）キャッシュを適用
+        },
       },
     );
 
@@ -46,7 +48,9 @@ export async function getSearchNews({ keyWord }: Props) {
           'Content-Type': 'application/json',
           'X-Api-Key': process.env.DATA_API_KEY as string,
         },
-        cache: 'no-store',
+        next: {
+          revalidate: 43200, // 43200秒（12時間）キャッシュを適用
+        },
       },
     );
 
