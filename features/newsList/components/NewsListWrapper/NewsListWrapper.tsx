@@ -54,9 +54,9 @@ const NewsListWrapper = ({ articleList, pageSize }: ArticleDataProps) => {
                     className="aspect-[2/1] w-screen rounded-t-[inherit] object-cover"
                     priority={true}
                   />
-                  <div className="p-2 flex flex-col justify-between gap-2 flex-grow">
+                  <div className="flex grow flex-col justify-between gap-2 p-2">
                     <div className="flex flex-col gap-1">
-                      <span className="inline-block text-neutral-400 text-xs">
+                      <span className="inline-block text-xs text-neutral-400">
                         {new Date(article.publishedAt).toLocaleDateString(
                           'ja-JP',
                           options,
