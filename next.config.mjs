@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  runtime: 'edge',
+  env: {
+    NEXT_PUBLIC_DATA_API_KEY: process.env.NEXT_PUBLIC_DATA_API_KEY,
+  },
   images: {
     unoptimized: true,
     // remotePatterns: [

@@ -3,8 +3,6 @@ import * as Search from '../../features/search/components/Index';
 import { getSearchNews } from '../_libs/api';
 import { PAGE_SIZE } from '../_constants/data';
 
-export const runtime = 'edge';
-
 type Props = {
   searchParams: { q: string };
 };
