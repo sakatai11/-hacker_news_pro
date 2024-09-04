@@ -1,7 +1,7 @@
 import Title from '../_components/elements/title/Index';
 import * as NewsList from '@/features/newsList/components/Index';
 import { PAGE_SIZE } from '../_constants/data';
-import { getNews } from '../_libs/api';
+import { getNews } from '../_libs/apis';
 
 type Props = {
   params: { newsList: string };

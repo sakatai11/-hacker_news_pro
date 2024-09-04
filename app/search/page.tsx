@@ -1,6 +1,6 @@
 import Title from '../_components/elements/title/Index';
 import * as Search from '../../features/search/components/Index';
-import { getSearchNews } from '../_libs/api';
+import { getSearchNews } from '../_libs/apis';
 import { PAGE_SIZE } from '../_constants/data';
 
 type Props = {
