@@ -8,18 +8,13 @@ type Props = {
 };
 
 export default async function SearchPage({ searchParams }: Props) {
-  const data = await getSearchNews({ keyWord: searchParams.q });
+  const res = await getSearchNews({ keyWord: searchParams.q });
 
   return (
     <>
       <Title text={'Search'} />
       <Search.KeyWord />
-      {data && (
-        <Search.SearchWrapper
-          articleList={data.articles}
-          pageSize={PAGE_SIZE}
-        />
-      )}
+      {res && <Search.SearchWrapper articleList={res} pageSize={PAGE_SIZE} />}
     </>
   );
 }

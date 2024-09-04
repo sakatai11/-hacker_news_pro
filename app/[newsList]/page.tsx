@@ -10,7 +10,7 @@ type Props = {
 export default async function Page({ params }: Props) {
   const newsList = params.newsList;
 
-  const data = await getNews({ params: newsList === '/' ? '' : newsList });
+  const res = await getNews({ params: newsList === '/' ? '' : newsList });
   // console.log('Data:', data.articles);
 
   function capitalizeFirstLetter(string: string) {
@@ -26,10 +26,7 @@ export default async function Page({ params }: Props) {
             : capitalizeFirstLetter(params.newsList)
         }
       />
-      <NewsList.NewsListWrapper
-        articleList={data.articles}
-        pageSize={PAGE_SIZE}
-      />
+      <NewsList.NewsListWrapper articleList={res} pageSize={PAGE_SIZE} />
     </>
   );
 }

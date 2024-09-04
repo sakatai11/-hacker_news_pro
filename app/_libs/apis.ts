@@ -1,3 +1,4 @@
+import { ArticleType } from '@/types/types';
 import { ENDPOINT_URL } from '../_constants/data';
 
 type Props = {
@@ -28,7 +29,7 @@ export async function getNews({ params }: Props) {
     }
 
     const data = await res.json();
-    return data;
+    return data.articles as ArticleType[];
   } catch (error) {
     console.error(error);
     return [];
@@ -59,7 +60,7 @@ export async function getSearchNews({ keyWord }: Props) {
     }
 
     const data = await res.json();
-    return data;
+    return data.articles as ArticleType[];
   } catch (error) {
     console.error(error);
     return [];
