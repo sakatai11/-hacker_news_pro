@@ -34,42 +34,45 @@ const NewsListWrapper = ({ articleList, pageSize }: ArticleDataProps) => {
           spacing={5}
           direction={{ xs: 'column', sm: 'row' }}
         >
-          {displayedArticles.map((article) => (
-            <Grid key={uuid()} item xs={4}>
-              <Link href={article.url}>
-                <Box
-                  boxShadow={3}
-                  borderRadius={2}
-                  bgcolor={'#FFFFFF'}
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
-                  height="100%"
-                >
-                  <Image
-                    src={article.urlToImage ? article.urlToImage : dummy.src}
-                    width={320}
-                    height={160}
-                    alt="アイキャッチ"
-                    className="aspect-[2/1] w-screen rounded-t-[inherit] object-cover"
-                    priority={true}
-                  />
-                  <div className="flex grow flex-col justify-between gap-2 p-2">
-                    <div className="flex flex-col gap-1">
-                      <span className="inline-block text-xs text-neutral-400">
-                        {new Date(article.publishedAt).toLocaleDateString(
-                          'ja-JP',
-                          options,
-                        )}
-                      </span>
-                      <p className="text-xl font-bold">{article.title}</p>
+          {displayedArticles.map((article) => {
+            return (
+              //returnを使う場合
+              <Grid key={uuid()} item xs={4}>
+                <Link href={article.url}>
+                  <Box
+                    boxShadow={3}
+                    borderRadius={2}
+                    bgcolor={'#FFFFFF'}
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="space-between"
+                    height="100%"
+                  >
+                    <Image
+                      src={article.urlToImage ? article.urlToImage : dummy.src}
+                      width={320}
+                      height={160}
+                      alt="アイキャッチ"
+                      className="aspect-[2/1] w-screen rounded-t-[inherit] object-cover"
+                      priority={true}
+                    />
+                    <div className="flex grow flex-col justify-between gap-2 p-2">
+                      <div className="flex flex-col gap-1">
+                        <span className="inline-block text-xs text-neutral-400">
+                          {new Date(article.publishedAt).toLocaleDateString(
+                            'ja-JP',
+                            options,
+                          )}
+                        </span>
+                        <p className="text-xl font-bold">{article.title}</p>
+                      </div>
+                      <p className="break-words">{article.author}</p>
                     </div>
-                    <p className="break-words">{article.author}</p>
-                  </div>
-                </Box>
-              </Link>
-            </Grid>
-          ))}
+                  </Box>
+                </Link>
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
       {count <= articleList.length && (
